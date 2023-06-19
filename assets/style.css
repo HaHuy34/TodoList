@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,300;1,400;1,500&family=Rubik:ital,wght@0,300;0,400;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,300;0,500;1,300;1,400;1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 410px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.todo-main {
+  margin-top: 30px;
+}
+
+.list-main-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#work-title {
+  height: 30px;
+  width: 320px;
+  border: 1px solid #c3c3c3;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 20px;
+}
+
+#work-title::placeholder {
+  font-size: 15px;
+  color: #c3c3c3;
+}
+
+.add-job {
+  padding: 10px 20px;
+  background-color: rgb(236, 8, 8);
+  border-radius: 5px;
+  color: #ffff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.add-job:hover {
+  background-color: rgb(89, 89, 89);
+}
+
+.bx-trash {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #c3c3c3;
+  color: #000;
+  font-size: 21px;
+  cursor: pointer;
+  border: 1px solid #c3c3c3;
+  transition: all 0.3s;
+}
+
+i.bx.bx-check {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #c3c3c3;
+  color: #000;
+  font-size: 21px;
+  cursor: pointer;
+  border: 1px solid #c3c3c3;
+  margin-left: 20px;
+  transition: all 0.3s;
+}
+
+.bx-trash:hover,
+i.bx.bx-check:hover {
+  border: 1px solid red;
+  scale: 1.1;
+}
+
+ul li {
+  padding-left: 10px;
+  color: rgb(133, 131, 129);
+  margin: 10px 0;
+  list-style: none;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-icons-title {
+  display: flex;
+  flex-direction: inherit;
+  justify-content: space-between;
+  order: 4;
+}
+
+.check-done {
+   color: #f3eded;
+}
+
+.check-icons {
+    text-decoration: none;
+}
