@@ -55,7 +55,9 @@ body {
   background-color: rgb(89, 89, 89);
 }
 
-.bx-trash {
+.bx-trash,
+i.bx.bx-check,
+i.bx.bx-edit {
   padding: 5px;
   border-radius: 5px;
   background-color: #c3c3c3;
@@ -64,9 +66,11 @@ body {
   cursor: pointer;
   border: 1px solid #c3c3c3;
   transition: all 0.3s;
+  display: flex;
+  align-items: center;
 }
 
-i.bx.bx-check {
+.priority {
   padding: 5px;
   border-radius: 5px;
   background-color: #c3c3c3;
@@ -74,12 +78,29 @@ i.bx.bx-check {
   font-size: 21px;
   cursor: pointer;
   border: 1px solid #c3c3c3;
-  margin-left: 20px;
   transition: all 0.3s;
+  display: flex;
+  justify-content: center;
 }
 
 .bx-trash:hover,
-i.bx.bx-check:hover {
+i.bx.bx-check:hover,
+i.bx.bx-edit:hover {
+  border: 1px solid red;
+  scale: 1.1;
+}
+
+.bxs-chevrons-down,
+.bxs-chevrons-up {
+  display: flex;
+  align-items: center;
+  border: 1px solid #c3c3c3;
+
+}
+
+.bxs-chevrons-up:hover,
+.bxs-chevrons-down:hover {
+  height: 100%;
   border: 1px solid red;
   scale: 1.1;
 }
@@ -100,6 +121,7 @@ ul li {
   flex-direction: inherit;
   justify-content: space-between;
   order: 4;
+  gap: 10px;
 }
 
 .check-done {
