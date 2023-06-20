@@ -21,7 +21,7 @@ body {
   margin-top: 30px;
 }
 
-.list-main-title {
+.todo_wrapp {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -114,6 +114,7 @@ ul li {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .main-icons-title {
@@ -130,4 +131,8 @@ ul li {
 
 .check-icons {
     text-decoration: none;
+}
+
+.color {
+  color: #000;
 }
