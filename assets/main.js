@@ -6,8 +6,33 @@ const todo_wrapper = document.querySelector(".todo_wrapp");
 //Todo: Thêm công việc
 function moreWork() {
   const jobTitle = nameWork.value;
-
+  //Sắp xếp vị trí công việc theo ý mình
   const newJobItem = document.createElement("li");
+  newJobItem.classList = "item";
+  newJobItem.draggable = true;
+  const items = listJob.querySelectorAll(".item");
+  items.forEach((item) => {
+    item.addEventListener("dragstart", () => {
+      // Thêm lớp kéo vào mục sau một thời gian trì hoãn
+      setTimeout(() => item.classList.add("dragging"), 0);
+    });
+    // Xóa lớp kéo khỏi mục trong sự kiện dragend
+    item.addEventListener("dragend", () => item.classList.remove("dragging"));
+  });
+  const initlistJob = (e) => {
+    e.preventDefault();
+    const draggingItem = document.querySelector(".dragging");
+    // Lấy tất cả các mục ngoại trừ hiện đang kéo và tạo mảng của chúng
+    let siblings = [...listJob.querySelectorAll(".item:not(.dragging)")];
+    // Tìm vị trí mà sau đó vật phẩm kéo sẽ được đặt
+    let nextSibling = siblings.find((sibling) => {
+      return e.clientY <= sibling.offsetTop + sibling.offsetHeight / 2;
+    });
+    // Chèn mục kéo trước vị trí được tìm thấy
+    listJob.insertBefore(draggingItem, nextSibling);
+  };
+  listJob.addEventListener("dragover", initlistJob);
+  listJob.addEventListener("dragenter", (e) => e.preventDefault());
 
   //Todo: div chứa icons delete, checkDone, Edit
   const divMainIcons = document.createElement("div");
@@ -55,7 +80,7 @@ function moreWork() {
       divMainIcons.removeChild(doneWork);
     } else {
       divMainIcons.insertBefore(editWork, deleteIcon);
-      divMainIcons.insertBefore(deleteIcon, null);
+      divMainIcons.insertBefore(deleteIcon, editWork);
       newJobItem.classList.add("color");
     }
   });
@@ -116,6 +141,6 @@ addJob.addEventListener("click", function () {
   }
 });
 
-new Sortable(listJob, {
-  animation: 300,
-});
+// new Sortable(listJob, {
+//   animation: 300,
+// });

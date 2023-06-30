@@ -95,7 +95,6 @@ i.bx.bx-edit:hover {
   display: flex;
   align-items: center;
   border: 1px solid #c3c3c3;
-
 }
 
 .bxs-chevrons-up:hover,
@@ -126,13 +125,17 @@ ul li {
 }
 
 .check-done {
-   color: #f3eded;
+  color: #f3eded;
 }
 
 .check-icons {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .color {
-  color: #000;
+  color: rgb(133, 131, 129);
+}
+
+.dragging {
+  opacity: 0.6;
 }
